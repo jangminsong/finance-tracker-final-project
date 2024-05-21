@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.Homepage {
+  padding: 1rem;
+}
