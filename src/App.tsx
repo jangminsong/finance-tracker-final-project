@@ -29,11 +29,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App flex">
-      {user ? <Homepage /> : <Authentication />}
-      {/*<div className="flex-grow">
-        <Homepage />
-  </div> */}
+    <div className="App flex h-screen">
+      <Sidenav />
+      <div className="flex-grow">
+        {/* {user ? <Homepage /> : <Authentication />} */}
+      </div>
     </div>
   );
 }
