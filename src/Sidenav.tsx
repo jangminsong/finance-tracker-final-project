@@ -18,8 +18,24 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import Account1 from "./Account1"; // Ensure you import the Account1 component correctly
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "./firebase";
+import { loginUser, logoutUser } from "./features/userSlice";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export function Sidenav() {
+  const user = useSelector((state) => state.data.user.user);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(loginUser());
+    signOut(auth);
+  };
+
+  const handleLogin = () => {
+    signInWithEmailAndPassword(auth, email, password);
+  };
+
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -56,7 +72,10 @@ export function Sidenav() {
                 />
               </ListItemSuffix>
             </ListItem>
-            <ListItem className="hover:bg-gray-200 text-xl">
+            <ListItem
+              className="hover:bg-gray-200 text-xl"
+              onClick={handleLogout}
+            >
               <ListItemPrefix>
                 <PowerIcon className="h-7 w-7" />
               </ListItemPrefix>
@@ -65,7 +84,12 @@ export function Sidenav() {
           </List>
         </div>
         <div className="flex flex-col gap-2 mt-4">
-          <Button variant="text" size="lg" className="w-full text-xl">
+          <Button
+            onClick={handleOpen}
+            variant="text"
+            size="lg"
+            className="w-full text-xl"
+          >
             <span>Log In</span>
           </Button>
           <Button variant="gradient" size="lg" className="w-full text-xl">

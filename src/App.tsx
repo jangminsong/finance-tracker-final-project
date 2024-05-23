@@ -30,10 +30,7 @@ function App() {
 
   return (
     <div className="App flex h-screen">
-      <Sidenav />
-      <div className="flex-grow">
-        {/* {user ? <Homepage /> : <Authentication />} */}
-      </div>
+      <div className="flex-grow">{user ? <Sidenav /> : <Authentication />}</div>
     </div>
   );
 }

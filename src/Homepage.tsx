@@ -3,6 +3,7 @@ import { Button } from "@material-tailwind/react";
 import FinaceNote from "./FinanceNote";
 import { useState, ChangeEvent } from "react";
 import { IList } from "./Interface";
+import Sidenav from "./Sidenav";
 
 function Homepage() {
   const [title, setTitle] = useState<string>("");
