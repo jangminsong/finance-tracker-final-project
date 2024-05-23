@@ -50,12 +50,12 @@ export function Sidenav() {
               alt="Sidebar logo"
               className="h-auto w-16 mr-4"
             />
-            <Typography variant="h5" color="blue-gray" className="text-5xl">
+            <Typography variant="h5" color="blue-gray" className="text-4xl">
               Bobcats Bucks
             </Typography>
           </div>
           <List>
-            <ListItem
+            {/* <ListItem
               className="hover:bg-gray-200 text-xl"
               onClick={handleOpen}
             >
@@ -71,10 +71,10 @@ export function Sidenav() {
                   className="rounded-full"
                 />
               </ListItemSuffix>
-            </ListItem>
+            </ListItem> */}
             <ListItem
-              className="hover:bg-gray-200 text-xl"
               onClick={handleLogout}
+              className="hover:bg-gray-200 text-xl"
             >
               <ListItemPrefix>
                 <PowerIcon className="h-7 w-7" />
@@ -83,19 +83,14 @@ export function Sidenav() {
             </ListItem>
           </List>
         </div>
-        <div className="flex flex-col gap-2 mt-4">
-          <Button
-            onClick={handleOpen}
-            variant="text"
-            size="lg"
-            className="w-full text-xl"
-          >
+        {/* <div className="flex flex-col gap-2 mt-4">
+          <Button variant="text" size="lg" className="w-full text-xl">
             <span>Log In</span>
           </Button>
           <Button variant="gradient" size="lg" className="w-full text-xl">
             <span>Sign In</span>
           </Button>
-        </div>
+        </div> */}
       </Card>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>

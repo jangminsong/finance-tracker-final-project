@@ -1,16 +1,20 @@
 import { IList } from "./Interface";
+import { IconButton, ListItemSuffix } from "@material-tailwind/react";
 interface Props {
-  list: IList;
+  expense: IList;
 }
 
-const FinaceNote = ({ list }: Props) => {
+const FinaceNote = ({ expense }: Props) => {
   return (
-    <div>
-      <div>
-        <span>{list.listName}</span>
-        <span>{list.price}</span>
+    <div className="p-5 text-center w-[100%]">
+      <div className="flex flex-row w-[100%]">
+        <div className="flex-[0.5] text-2xl">
+          {expense.listName === ""
+            ? (expense.listName = "No Name")
+            : expense.listName}
+        </div>
+        <div className="flex-[0.5] text-2xl">${expense.price}</div>
       </div>
-      <button>Delete</button>
     </div>
   );
 };
